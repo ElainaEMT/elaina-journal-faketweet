@@ -1,0 +1,174 @@
+//- out: ../../public/index_vn.html, pretty: true
+extends layout
+block variables
+  -
+    var title = "Elaina's Journal | FakeTweet";
+    //- MAKE SURE THE CORRECT LANGUAGE IS SELECTED, it either english or vietnamese
+    var language = "english";
+
+block blockMeta
+  meta(property="og:url" content="https://elaina-journal-faketweet.herokuapp.com/tweet")
+  meta(property="og:title" content="Elaina's Journal | FakeTweet")
+  meta(name="og:description" content="Elaina just tweeted on FakeTweet")
+  meta(name="description" content="Elaina just tweeted on FakeTweet")
+  meta(property="og:image" content="https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/preview2.jpg")
+  meta(property="og:site_name" content="Elaina's Journal")
+  meta(property="og:type" content="website")
+  meta(name="twitter:card" content="summary_large_image")
+  meta(name="twitter:creator" content="@EMTElaina")
+  meta(name="twitter:description" content="Elaina just tweeted on FakeTweet")
+  meta(name="twitter:image" content="https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/preview2.jpg")
+
+block blockCSS
+  link(rel="stylesheet", href!= cssFolder + "/selectize.css")
+  link(rel="stylesheet", href!= cssFolder + "/style.css")
+  link(rel='canonical', href='')
+  link(rel='stylesheet', href!= cssFolder + "/bootstrap.css")
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+
+block blockJS
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+  script(src!= jsFolder + '/bootstrap.min.js')
+  script(src!= jsFolder + '/chs_custom.js')
+  script(src!= jsFolder + '/validate.js')
+  script(src!= jsFolder + '/waypoint.js')
+  script(src!= jsFolder + '/script.min.js?v=843575')
+  script(src!= jsFolder + '/vendor.js')
+
+  script(type='text/javascript').
+    var pageOption = {
+    language: 'english',
+    };
+
+block content
+  .container-fluid(style="padding: 0;")
+    //- bg img on left side, not appear on mobile
+    .chs_bg_img_left
+    //- navbar for mobile
+    .chs_navbar_small_screen
+      .vertical_center
+        .chs_link
+          a(href='https://www.facebook.com/elaina.journal' target='_blank') Elaina's Journal
+    //- navbar for PC
+    .chs_navbar_wide_screen
+      .vertical_center
+        ul
+          li.chs_link
+            a(href='https://www.facebook.com/elaina.journal' target='_blank') Elaina's Journal on Facebook
+          li.chs_link
+            a(href='https://twitter.com/EMTElaina' target='_blank') Elaina on Twitter
+    //- bg img on right side, not appear on mobile
+    .chs_bg_img_right
+    //- main body
+    .chs_tweet_body
+      .row(style="padding: 0;")
+        .col-xs-12.col-sm-12
+          //- poster area includes profile pic, name and handle
+          .chs_poster_area
+            .vertical_center.chs_profile_pic
+              img(src='https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/profile_pic_elaina.jpg')
+            .vertical_center.chs_username_area
+              .chs_username_poster Ashen Witch Elaina
+              .chs_handle_poster @Elaina
+      .row(style="padding: 0;")
+        .col-xs-12.col-sm-12.container
+          .row
+            .col-xs-12.col-sm-12.chs_content_area.container
+              .row
+                .col-xs-12.col-sm-12
+                  //- tweet content goes here
+                  .chs_tweet_area
+                    .chs_tweet_text I just got a teaching job at Kivotos<br /><br />
+                      | It feels rather nice to have students call me "Elaina-sensei".<br /><br />
+                      | Since they are such nice students, I should teach them some useful magic spells too!
+                    .chs_tweet_img
+                      img(src='https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/tweet2.png')
+                    .chs_post_details 07:00AM&emsp;|&emsp;Nov 30, 2021&emsp;|&emsp;Tweeter for Wanderer
+              .row(style="padding-left:15px;padding-right:15px;")
+                .col-xs-12.col-sm-12.chs_react_bar_area.container
+                  .row
+                    //- add more features here soon
+                    .col-xs-6.col-sm-6.chs_react(align="center") Love this
+                    .col-xs-6.col-sm-6.chs_react(align="center") Tweet this
+              .row
+                .col-xs-12.col-sm-12
+                  //- replies content goes here
+                  .chs_replies_area
+                    .chs_replies_area_header Replies
+                    //- start of a reply
+                    .chs_reply_area
+                      .row(style="padding: 0;")
+                        .col-xs-12.col-sm-12
+                          .chs_replier_area
+                            .vertical_center.chs_profile_pic_reply
+                              img(src='https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/profile_pic_saya.jpg')
+                            .vertical_center.chs_username_area_reply
+                              ul
+                                li.chs_username_replier You're so cute, Elaina-san
+                                li.chs_handle_replier @Saya
+                      .row(style="padding: 0;")
+                        .col-xs-12.col-sm-12.container
+                          .row
+                            .col-xs-12.col-sm-12.chs_content_area.container
+                              .row
+                                .col-xs-12.col-sm-12
+                                  .chs_tweet_area
+                                    .chs_reply_text Woah, so now Elaina-san is a teacher! So cool! I want you to teach me!<br />
+                                      | But first, let's get married, Elaina-san!
+                    //- end of a reply
+                    .chs_reply_area
+                      .row(style="padding: 0;")
+                        .col-xs-12.col-sm-12
+                          .chs_replier_area
+                            .vertical_center.chs_profile_pic_reply
+                              img(src='https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/profile_pic_saya.jpg')
+                            .vertical_center.chs_username_area_reply
+                              ul
+                                li.chs_username_replier You're so cute, Elaina-san
+                                li.chs_handle_replier @Saya
+                      .row(style="padding: 0;")
+                        .col-xs-12.col-sm-12.container
+                          .row
+                            .col-xs-12.col-sm-12.chs_content_area.container
+                              .row
+                                .col-xs-12.col-sm-12
+                                  .chs_tweet_area
+                                    .chs_reply_text Still, can your students use magic though? What kind of spells you want to teach them?
+                    .chs_reply_area
+                      .row(style="padding: 0;")
+                        .col-xs-12.col-sm-12
+                          .chs_replier_area
+                            .vertical_center.chs_profile_pic_reply
+                              img(src='https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/profile_pic_elaina.jpg')
+                            .vertical_center.chs_username_area_reply
+                              ul
+                                li.chs_username_replier Ashen Witch Elaina
+                                li.chs_handle_replier @Elaina
+                      .row(style="padding: 0;")
+                        .col-xs-12.col-sm-12.container
+                          .row
+                            .col-xs-12.col-sm-12.chs_content_area.container
+                              .row
+                                .col-xs-12.col-sm-12
+                                  .chs_tweet_area
+                                    .chs_reply_text It's kind of spell that everyone can use:
+                                    .chs_tweet_img
+                                      img(src='https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/tweet3.jpg')
+                    .chs_reply_area
+                      .row(style="padding: 0;")
+                        .col-xs-12.col-sm-12
+                          .chs_replier_area
+                            .vertical_center.chs_profile_pic_reply
+                              img(src='https://hsbcvietnam.github.io/elaina-journal-faketweet/public/images/rocket/profile_pic_elaina.jpg')
+                            .vertical_center.chs_username_area_reply
+                              ul
+                                li.chs_username_replier Ashen Witch Elaina
+                                li.chs_handle_replier @Elaina
+                      .row(style="padding: 0;")
+                        .col-xs-12.col-sm-12.container
+                          .row
+                            .col-xs-12.col-sm-12.chs_content_area.container
+                              .row
+                                .col-xs-12.col-sm-12
+                                  .chs_tweet_area
+                                    .chs_reply_text Maybe I'll use this "spell" on you the next time you say "Let's get married"?
